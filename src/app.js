@@ -6,6 +6,7 @@ const request=require("request")
 const forecast=require("./utils/forecast");
 const geocode=require("./utils/geocode");
 
+const port=process.env.PORT||3000;
 const publicDirPath=path.join(__dirname,"../public")
 const viewsPath=path.join(__dirname,"../templates/views");
 const partialPath=path.join(__dirname,"../templates/partials");
@@ -57,11 +58,8 @@ app.get('/weather',(req,res)=>{
         
 
     })
-    
-   
    
 })
-
 
 /*
 app.get('/',(req,res)=>{
@@ -90,6 +88,6 @@ app.get('*',(req,res)=>{
     //res.send('My 404 Page!!');
     res.render('404',{"errorMessage":"404 page","name":"manoj"})
 })
-app.listen('3000',()=>{
-    console.log("Server is up on port 3000");
+app.listen(port,()=>{
+    console.log("Server is up on port "+port);
 })
