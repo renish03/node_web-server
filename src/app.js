@@ -54,8 +54,6 @@ app.get('/weather',(req,res)=>{
 
         })
 
-        const weatherform=document.querySelector('form');
-        
 
     })
    
